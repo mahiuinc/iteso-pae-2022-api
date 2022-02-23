@@ -7,3 +7,4 @@ router.put('/',controller.update);
 router.delete('/',controller.delete);
 
 module.exports = router;
+
