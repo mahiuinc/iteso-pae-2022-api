@@ -3,13 +3,10 @@ const UsersController = {
         res.send('will get users');
     },
     create: (req, res) => {
-        res.send('will create a user');
+        res.send({});
     },
     update: (req, res) => {
-        res.send('will update a user');
-    },
-    delete: (req, res) => {
-        res.send('will delete a user');
+
     }
 }
 
