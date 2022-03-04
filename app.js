@@ -1,15 +1,18 @@
 const express = require('express');
 const path = require('path');
+const Database = require('./src/core/database')
 
+//Load app routes
 const apiRoutes = require('./src/routes');
 
+// init app
 const app = express();
-
 const port = process.env.PORT || 3000;
 
+// Use route middlewares
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
-
+//Set main endpoint
 app.use('/api', apiRoutes);
 
 app.get('/', (req, res) => {
@@ -19,6 +22,11 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen(port, function() {
-    console.log(`app is running in port ${port}...`);
+//MASTER_USER:SsbkKclBpSH5uLd8
+//Connect to database
+Database.connect().then(() => {
+    // Listen to port
+    app.listen(port, function () {
+        console.log(`app is running in port ${port}...`);
+    });
 });
