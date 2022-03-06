@@ -1,19 +1,3 @@
-// const { MongoClient } = require('mongodb');
-
-// const mongoUrl = ''
-
-// const Database = {
-//     connect: (calback) => {
-//         return new Promise((accept, reject) => {
-//             MongoClient.connect(mongoUrl, {useUnifiedTopology: true}, (err, client) => {
-//                 this.dbInstance = client.db();
-//                 accept(client);
-//             })
-//         })
-//     }
-// }
-
-
 const {MongoClient, Collection} = require('mongodb'); // const MongoClient = require('mongodb').MongoClient;
 const mongoUrl = 'mongodb+srv://UserM:vzsLf2WvaSadVjSn@clusterproyecto.sliuu.mongodb.net/CHAT_DATABASE?retryWrites=true&w=majority';
 let database;
