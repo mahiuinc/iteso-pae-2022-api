@@ -1,22 +1,9 @@
-// const Database = requiere('./../../core/database.js')
+const Model = require('../../core/model');
 
-// class User {
-//     collection;
+class User extends Model {
+    constructor() {
+        super('users');
+    }
+}
 
-//     constructor(){
-//         // Set collection
-//         this.collection = Database.collection('users');
-//     }
-
-//     getAll() {
-//         return new Promise((accept, reject) => {
-//             this.collection.find().toArray((arr, results) => {
-//                 if(err) {
-//                     reject(err);
-//                 }else {
-//                     accept(results);
-//                 }
-//             });
-//         });
-//     }
-// }
+module.exports = User;

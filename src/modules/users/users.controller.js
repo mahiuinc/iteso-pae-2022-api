@@ -1,15 +1,20 @@
-const Database = require('../../core/database')
+const User = require('./user.model')
 
 const UsersController = {
     getAll: (req, res) => {
         //res.send('will get users');
-        const collection = Database.selectCollection('users');
-        collection.find({}).toArray(( err, results) => {
-            if(err){
-                console.log('Algo falló ', err)
-            }else{
-                console.log('Resultados: ', results);
-                res.send(results);
+        const user = new User();
+        user.getAll().then(results => {
+            res.send(results);
+        });
+    },
+    getOne: (req, res) => {
+        const user = new User();
+        user.getOne(req.params.id).then(result => {
+            if(result) {
+                res.send(result);
+            } else {
+                res.sendStatus(404);
             }
         });
     },
